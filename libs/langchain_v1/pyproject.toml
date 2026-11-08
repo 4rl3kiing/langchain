@@ -155,6 +155,9 @@ convention = "google"
 ignore-var-parameters = true  # ignore missing documentation for *args and **kwargs parameters
 
 [tool.ruff.lint.extend-per-file-ignores]
+"langchain/agents/middleware/types.py" = [
+    "PLC0414", # Explicit `as` aliases mark lazily re-exported decorators for type checkers
+]
 "tests/unit_tests/agents/test_react_agent.py" = ["ALL"]
 "tests/*" = [
     "D1",      # Documentation rules

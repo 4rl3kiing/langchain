@@ -36,14 +36,31 @@ if TYPE_CHECKING:
     from langgraph.runtime import Runtime
     from langgraph.stream._mux import TransformerFactory
 
+    # Explicit `as` aliases mark these as re-exports for type checkers; at runtime
+    # they are resolved lazily by `__getattr__` below.
     from langchain.agents.middleware._decorators import (
-        after_agent,
-        after_model,
-        before_agent,
-        before_model,
-        dynamic_prompt,
-        hook_config,
-        wrap_tool_call,
+        after_agent as after_agent,
+    )
+    from langchain.agents.middleware._decorators import (
+        after_model as after_model,
+    )
+    from langchain.agents.middleware._decorators import (
+        before_agent as before_agent,
+    )
+    from langchain.agents.middleware._decorators import (
+        before_model as before_model,
+    )
+    from langchain.agents.middleware._decorators import (
+        dynamic_prompt as dynamic_prompt,
+    )
+    from langchain.agents.middleware._decorators import (
+        hook_config as hook_config,
+    )
+    from langchain.agents.middleware._decorators import (
+        wrap_model_call as wrap_model_call,
+    )
+    from langchain.agents.middleware._decorators import (
+        wrap_tool_call as wrap_tool_call,
     )
     from langchain.agents.structured_output import ResponseFormat
 
